@@ -158,6 +158,47 @@
             transform: translateY(-1px);
         }
 
+        /* --- YouTube Section --- */
+        .youtube-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .youtube-text {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 15px;
+            font-family: 'Noto Sans Devanagari', sans-serif;
+        }
+
+        .youtube-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #ff0000;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(255,0,0,0.3);
+        }
+
+        .youtube-btn:hover {
+            background: #e60000;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255,0,0,0.4);
+        }
+
+        .youtube-icon {
+            width: 28px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
         .footer {
             text-align: center;
             padding: 40px 20px;
@@ -186,6 +227,17 @@
                 <button class="download-btn" onclick="downloadImage()">
                     📱 Download 4K Image
                 </button>
+            </div>
+
+            <!-- 🌸 YouTube Channel Section -->
+            <div class="youtube-section">
+                <p class="youtube-text">🎥 ఆలయ వేడుకల వీడియోల కోసం మా యూట్యూబ్ ఛానల్‌ను సందర్శించండి 👇</p>
+                <a class="youtube-btn" href="https://www.youtube.com/@ramanujampendurthi1012" target="_blank" rel="noopener noreferrer">
+                    <svg class="youtube-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 17">
+                        <path fill="white" d="M23.5 2.57a2.97 2.97 0 0 0-2.09-2.11C19.38 0 12 0 12 0S4.62 0 2.59.46A2.97 2.97 0 0 0 .5 2.57 31.29 31.29 0 0 0 0 8.5a31.29 31.29 0 0 0 .5 5.93 2.97 2.97 0 0 0 2.09 2.11C4.62 17 12 17 12 17s7.38 0 9.41-.46a2.97 2.97 0 0 0 2.09-2.11A31.29 31.29 0 0 0 24 8.5a31.29 31.29 0 0 0-.5-5.93ZM9.75 12.02V4.98L15.5 8.5l-5.75 3.52Z"/>
+                    </svg>
+                    Visit YouTube Channel
+                </a>
             </div>
         </div>
 
