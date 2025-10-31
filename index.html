@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SHRI VENKATESWARA SWAMY 4K IMAGE</title>
+    <title>శ్రీ వెంకటేశ్వర స్వామి వారి 4K చిత్రాలు </title>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet" />
     <style>
         * {
@@ -78,13 +78,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-shadow: 0 0 30px rgba(255,215,0,0.5);
             letter-spacing: 2px;
-            animation: glow 3s ease-in-out infinite;
-        }
-
-        @keyframes glow {
-            0%, 100% { text-shadow: 0 0 20px rgba(255,215,0,0.6); }
-            50% { text-shadow: 0 0 40px rgba(255,215,0,1); }
         }
 
         .darshan-section {
@@ -126,6 +121,7 @@
             border-radius: 15px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
             border: 2px solid rgba(255,215,0,0.3);
+            transition: opacity 1s ease-in-out;
         }
 
         .download-section {
@@ -158,45 +154,40 @@
             transform: translateY(-1px);
         }
 
-        /* --- YouTube Section --- */
         .youtube-section {
             text-align: center;
-            margin-top: 40px;
+            margin-top: 25px;
         }
 
         .youtube-text {
             font-size: 1.2rem;
-            color: #fff;
-            margin-bottom: 15px;
-            font-family: 'Noto Sans Devanagari', sans-serif;
+            color: #e6e6fa;
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
         }
 
         .youtube-btn {
-            display: inline-flex;
-            align-items: center;
             background: #ff0000;
             color: white;
-            padding: 12px 30px;
+            padding: 12px 35px;
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
-            text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(255,0,0,0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3);
+            font-family: 'Cinzel', serif;
+            text-decoration: none;
         }
 
         .youtube-btn:hover {
-            background: #e60000;
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(255,0,0,0.4);
-        }
-
-        .youtube-icon {
-            width: 28px;
-            height: 20px;
-            margin-right: 10px;
+            background: #e60000;
+            box-shadow: 0 15px 35px rgba(255, 0, 0, 0.4);
         }
 
         .footer {
@@ -220,24 +211,20 @@
             <p class="darshan-date" id="darshanDate"></p>
 
             <div class="darshan-image-container">
-                <img class="darshan-image" src="darshan.jpg" alt="Today's Darshan" loading="lazy" />
+                <img class="darshan-image" src="darshan.jpg" alt="Today's Darshan" />
             </div>
 
             <div class="download-section">
                 <button class="download-btn" onclick="downloadImage()">
                     📱 Download 4K Image
                 </button>
-            </div>
 
-            <!-- 🌸 YouTube Channel Section -->
-            <div class="youtube-section">
-                <p class="youtube-text">🎥 ఆలయ వేడుకల వీడియోల కోసం మా యూట్యూబ్ ఛానల్‌ను సందర్శించండి 👇</p>
-                <a class="youtube-btn" href="https://www.youtube.com/@ramanujampendurthi1012" target="_blank" rel="noopener noreferrer">
-                    <svg class="youtube-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 17">
-                        <path fill="white" d="M23.5 2.57a2.97 2.97 0 0 0-2.09-2.11C19.38 0 12 0 12 0S4.62 0 2.59.46A2.97 2.97 0 0 0 .5 2.57 31.29 31.29 0 0 0 0 8.5a31.29 31.29 0 0 0 .5 5.93 2.97 2.97 0 0 0 2.09 2.11C4.62 17 12 17 12 17s7.38 0 9.41-.46a2.97 2.97 0 0 0 2.09-2.11A31.29 31.29 0 0 0 24 8.5a31.29 31.29 0 0 0-.5-5.93ZM9.75 12.02V4.98L15.5 8.5l-5.75 3.52Z"/>
-                    </svg>
-                    Visit YouTube Channel
-                </a>
+                <div class="youtube-section">
+                    <p class="youtube-text">🎥 ఆలయ వేడుకల వీడియోల కొరకు మా యూట్యూబ్ ఛానల్‌ను సందర్శించండి 👇</p>
+                    <a href="https://www.youtube.com/@ramanujampendurthi1012" target="_blank" class="youtube-btn">
+                        ▶️ Subscribe on YouTube
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -249,16 +236,19 @@
     </div>
 
     <script>
-        // Automatically set today's date in Telugu format
-        const today = new Date();
-        const formattedDate = today.toLocaleDateString('te-IN', {
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric'
-        });
-        document.getElementById('darshanDate').textContent = formattedDate;
+        // ✅ Function to auto-update today's date
+        function updateDate() {
+            const today = new Date();
+            const formattedDate = today.toLocaleDateString('en-IN', {
+                day: '2-digit',
+                month: '2-digit',
+                year: 'numeric'
+            });
+            document.getElementById('darshanDate').textContent = formattedDate;
+        }
+        updateDate();
 
-        // Download function
+        // ✅ Download Function
         function downloadImage() {
             const img = document.querySelector('.darshan-image');
             const a = document.createElement('a');
@@ -268,6 +258,20 @@
             a.click();
             document.body.removeChild(a);
         }
+
+        // ✅ Carousel Feature
+        const images = ["darshan.jpg"]; // Add future images like "darshan2.jpg", "darshan3.jpg"
+        let current = 0;
+        const darshanImage = document.querySelector('.darshan-image');
+
+        setInterval(() => {
+            darshanImage.style.opacity = 0;
+            setTimeout(() => {
+                current = (current + 1) % images.length;
+                darshanImage.src = images[current];
+                darshanImage.style.opacity = 1;
+            }, 1000);
+        }, 5000);
     </script>
 </body>
 </html>
