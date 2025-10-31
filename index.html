@@ -62,7 +62,7 @@
         .banner-image {
             width: 100%;
             max-width: 800px;
-            height: auto; /* Changed from fixed 300px height to auto for better aspect ratio */
+            height: auto;
             object-fit: contain;
             border-radius: 20px;
             box-shadow: 0 20px 40px rgba(0,0,0,0.3);
@@ -78,8 +78,13 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(255,215,0,0.5);
             letter-spacing: 2px;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px rgba(255,215,0,0.6); }
+            50% { text-shadow: 0 0 40px rgba(255,215,0,1); }
         }
 
         .darshan-section {
@@ -171,10 +176,10 @@
 
         <div class="darshan-section">
             <h2 class="darshan-title">🙏 ఈరోజు దివ్య దర్శనము 🙏</h2>
-            <p class="darshan-date" id="darshanDate">29-10-2025</p>
+            <p class="darshan-date" id="darshanDate"></p>
 
             <div class="darshan-image-container">
-                <img class="darshan-image" src="darshan.jpg" alt="Today's Darshan" />
+                <img class="darshan-image" src="darshan.jpg" alt="Today's Darshan" loading="lazy" />
             </div>
 
             <div class="download-section">
@@ -192,6 +197,16 @@
     </div>
 
     <script>
+        // Automatically set today's date in Telugu format
+        const today = new Date();
+        const formattedDate = today.toLocaleDateString('te-IN', {
+            day: '2-digit',
+            month: '2-digit',
+            year: 'numeric'
+        });
+        document.getElementById('darshanDate').textContent = formattedDate;
+
+        // Download function
         function downloadImage() {
             const img = document.querySelector('.darshan-image');
             const a = document.createElement('a');
